@@ -1,9 +1,9 @@
-import { MapResult } from 'hltv'
+import { GameMap, MapResult } from 'hltv'
 import Image from 'next/image'
 import { MatchProps } from 'pages/match/[mid]'
 import * as S from './styles'
 
-export const mapImages = {
+export const mapImages: { [key in GameMap]?: string } = {
   de_mirage:
     'https://liquipedia.net/commons/images/thumb/f/f3/Csgo_mirage.jpg/534px-Csgo_mirage.jpg',
   de_inferno:
@@ -35,13 +35,16 @@ export function MatchStatsCard({ data }: MatchProps) {
       </S.Format>
       <S.Maps>
         {data.maps.map((map: MapResult) => (
-          <S.MapsContainer>
+          <S.MapsContainer key={map.name}>
             <Image
               width="100%"
               height="25px"
               layout="responsive"
               objectFit="cover"
-              src={mapImages[`${map.name}`]}
+              src={
+                mapImages[map.name] ||
+                'https://www.hltv.org/img/static/statsmatchmaps/all.png'
+              }
             />
             <S.MapNameBg>
               <S.MapName>{map.name.replace('de_', '')}</S.MapName>
