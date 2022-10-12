@@ -1,9 +1,9 @@
 import styled from 'styled-components'
 
 export const Wrapper = styled.main`
-  border-radius: .5rem;
-  background: #01004C;
-  border: #0F348B solid 1px;
+  border-radius: 0.5rem;
+  background: #01004c;
+  border: #0f348b solid 1px;
   width: 30%;
   @media (max-width: 769px) {
     width: 70%;
@@ -14,18 +14,18 @@ export const Wrapper = styled.main`
 
 export const Title = styled.h1`
   text-align: center;
-  font-size: .75rem;
-  padding: .5rem;
+  font-size: 0.75rem;
+  padding: 0.5rem;
   text-transform: uppercase;
   background: black;
-  border-radius: 0 .5rem;
+  border-radius: 0 0.5rem;
 `
 
 export const FormatName = styled.p`
   padding: 1rem;
   text-transform: uppercase;
   font-weight: bold;
-  font-size: .75rem;
+  font-size: 0.75rem;
 `
 
 export const StreamsWrapper = styled.div`
@@ -33,10 +33,8 @@ export const StreamsWrapper = styled.div`
   display: flex;
   flex-direction: column;
   a {
-    color: #F9E00F;
-    margin: .25rem 0;
-    text-decoration: none
+    color: #f9e00f;
+    margin: 0.25rem 0;
+    text-decoration: none;
   }
 `
-
-

@@ -1,7 +1,12 @@
 import * as S from './styles'
-import Countdown from 'react-countdown'
+import { Event } from 'hltv'
 
-export default function MatchOverveview({ date, event }) {
+type MatchOverviewProps = {
+  date: Date
+  event: Event
+}
+
+export default function MatchOverveview({ date, event }: MatchOverviewProps) {
   const formattedData = new Date(date)
   const formatedDate = formattedData
     .toLocaleDateString('pt-BR', { month: 'short', day: '2-digit' })
@@ -15,7 +20,7 @@ export default function MatchOverveview({ date, event }) {
     <S.Wrapper>
       <S.Date>{formatedDate}</S.Date>
       <S.Time>{formatedTime}</S.Time>
-      <S.Event>{event.name}</S.Event>
+      <S.Event>{event?.name}</S.Event>
     </S.Wrapper>
   )
 }

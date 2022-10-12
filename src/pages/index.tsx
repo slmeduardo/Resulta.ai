@@ -46,7 +46,7 @@ function Home({ data }: HomeProps) {
 }
 
 export async function getServerSideProps() {
-  const res = await fetch('http://localhost:3000/api/matches')
+  const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/matches`)
   const data = await res.json()
 
   return {

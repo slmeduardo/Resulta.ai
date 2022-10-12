@@ -42,7 +42,9 @@ export async function getServerSideProps(context: GetServerSidePropsContext) {
   }
   const mid = context.params.mid
 
-  const res = await fetch(`http://localhost:3000/api/matches/${mid}`)
+  const res = await fetch(
+    `${process.env.NEXT_PUBLIC_API_URL}/api/matches/${mid}`
+  )
   const data: FullMatch = await res.json()
 
   return {

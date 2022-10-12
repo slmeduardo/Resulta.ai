@@ -17,10 +17,10 @@ export const Time = styled.p`
 }
 `
 
-type Props = {isLive: boolean}
+type Props = { isLive: boolean }
 
 export const Date = styled.p<Props>`
-  color: ${props => props.isLive ? 'red' : '#b4b4b4'};
+  color: ${(props) => (props.isLive ? 'red' : '#b4b4b4')};
   font-weight: bold;
   font-size: 0.75rem;
   @media (max-width: 769px) {
