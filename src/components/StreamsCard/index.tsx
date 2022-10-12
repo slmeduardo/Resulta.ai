@@ -7,7 +7,12 @@ const StreamsCard = ({ data }: MatchProps) => (
     <S.FormatName>Onde assistir</S.FormatName>
     <S.StreamsWrapper>
       {data.streams.map((stream) => (
-        <a href={stream.link} target="_blank">
+        <a
+          key={stream.link}
+          href={stream.link}
+          target="_blank"
+          rel="noreferrer"
+        >
           {stream.name}
         </a>
       ))}
