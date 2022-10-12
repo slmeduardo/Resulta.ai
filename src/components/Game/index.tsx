@@ -3,7 +3,7 @@ import * as S from './styles'
 
 interface Props {
   onClick: VoidFunction
-  date: number
+  date?: number
   live: boolean
   team1: {
     name: string
